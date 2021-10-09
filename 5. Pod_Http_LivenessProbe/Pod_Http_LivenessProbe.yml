@@ -8,7 +8,7 @@ spec:
   containers: 
     - 
       image: httpd:latest
-      name: http-container"
+      name: "http-container"
       ports:
         - containerPort: 80
           protocol: TCP
