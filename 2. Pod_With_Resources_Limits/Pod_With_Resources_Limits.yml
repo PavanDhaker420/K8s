@@ -2,12 +2,12 @@
 apiVersion: v1
 kind: Pod
 metadata: 
-  name: "Pod Resources with Limits"
+  name: "pod-resources-with-limits"
 spec: 
   containers: 
     - 
       image: httpd
-      name: "httpd container"
+      name: "httpd-container"
       ports: 
         - 
           containerPort: 80

@@ -2,13 +2,13 @@
 apiVersion: v1
 kind: Pod
 metadata: 
-  name: "Pod Liveness probe"
+  name: "pod-liveness-probe"
 spec: 
   restartPolicy: Never
   containers: 
     - 
       image: ubuntu:latest
-      name: "ubuntu container"
+      name: "ubuntu-container"
       command:
         - /bin/bash
         - -ec

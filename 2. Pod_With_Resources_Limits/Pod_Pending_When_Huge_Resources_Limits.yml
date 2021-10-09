@@ -2,12 +2,12 @@
 apiVersion: v1
 kind: Pod
 metadata: 
-  name: "Pod Pending Resources with Huge Limits and Resoucres not present on node"
+  name: "pod-pending-resources-with-huge-limits-and-resoucres-not-present-on-node"
 spec: 
   containers: 
     - 
       image: httpd
-      name: "httpd container"
+      name: "httpd-container"
       ports: 
         - 
           containerPort: 80

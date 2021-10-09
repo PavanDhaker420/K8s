@@ -2,12 +2,12 @@
 apiVersion: v1
 kind: Pod
 metadata: 
-  name: "Pod readiness Probe"
+  name: "pod-readiness-probe"
 spec:
   containers: 
     - 
       image: ubuntu:latest
-      name: "ubuntu container"
+      name: "ubuntu-container"
       command:
         - /bin/bash
         - -ec
