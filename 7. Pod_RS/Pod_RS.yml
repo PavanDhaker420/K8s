@@ -27,9 +27,9 @@ spec:
          protocol: TCP
       readinessProbe:
        httpGet:
-       port: 80
-       path: /
-      initialDelaySeconds: 5
-      periodSeconds: 2
-      successThreshold: 1
-      failureThreshold: 1
+        port: 80
+        path: /
+       initialDelaySeconds: 5
+       periodSeconds: 2
+       successThreshold: 1
+       failureThreshold: 1
