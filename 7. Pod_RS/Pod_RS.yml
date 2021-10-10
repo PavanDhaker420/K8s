@@ -17,7 +17,7 @@ spec:
   metadata:
    name: httpd-pod
    labels:
-    name: httpd-pod-label
+    name: httpd-label
   spec:
    containers:
     - name: httpd-container
