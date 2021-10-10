@@ -7,14 +7,11 @@ metadata:
   env: dev
   team: devops
 spec:
- selector:
-  matchLabels:
-   name: pod-job
  template:
   metadata:
    name: job-on-alpine
    labels:
-    name: pod-job
+    name: demo-job
   spec:
    containers:
     - name: alpine
