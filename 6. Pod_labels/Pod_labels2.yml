@@ -9,8 +9,8 @@ metadata:
   name: nginx-label
 spec:
  containers:
-  name: nginx-container
-  image: nginx:latest
-  ports:
-   - containerPort: 8080
-     protocol: TCP
+  - name: nginx-container
+    image: nginx:latest
+    ports:
+     - containerPort: 8080
+       protocol: TCP
