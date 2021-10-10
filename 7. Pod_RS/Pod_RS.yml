@@ -1,0 +1,35 @@
+--- 
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+ name: httpd-rs
+ labels:
+  env: dev
+  team: devops
+  name: httpd-label
+spec:
+ minReadySeconds: 5
+ replicas: 3
+ selector: 
+  matchLabels:
+   name: httpd-label
+ template:
+  metadata:
+   name: httpd-pod
+   labels:
+    name: httpd-pod-label
+  spec:
+   containers:
+    name: httpd-container
+    image: httpd:latest
+    ports:
+     - containerPort: 80
+       protocol: TCP
+    readinessProbe:
+     httpGet:
+      port: 80
+      path: /
+     initialDelaySeconds: 5
+     periodSeconds: 2
+     successThreshold: 1
+     failureThreshold: 1

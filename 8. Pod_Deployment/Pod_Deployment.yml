@@ -1,0 +1,33 @@
+--- 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: httpd-deployment
+ labels:
+  name: httpd-deployment-label
+spec:
+ minReadySeconds: 5
+ replicas: 3
+ selector: 
+  matchLabels:
+   name: httpd-server
+ template:
+  metadata:
+   name: httpd-pod
+   labels:
+    name: httpd-server
+  spec:
+   containers:
+    name: httpd-container
+    image: httpd:latest
+    ports:
+     - containerPort: 80
+       protocol: TCP
+    readinessProbe:
+     httpGet:
+      port: 80
+      path: /
+     initialDelaySeconds: 5
+     periodSeconds: 2
+     successThreshold: 1
+     failureThreshold: 1

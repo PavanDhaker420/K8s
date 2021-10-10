@@ -1,0 +1,32 @@
+--- 
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+ name: httpd-daemonset
+ labels:
+  name: httpd-daemonset-label
+spec:
+ minReadySeconds: 5
+ selector: 
+  matchLabels:
+   name: httpd-server
+ template:
+  metadata:
+   name: httpd-pod
+   labels:
+    name: httpd-server
+  spec:
+   containers:
+    name: httpd-container
+    image: httpd:latest
+    ports:
+     - containerPort: 80
+       protocol: TCP
+    readinessProbe:
+     httpGet:
+      port: 80
+      path: /
+     initialDelaySeconds: 5
+     periodSeconds: 2
+     successThreshold: 1
+     failureThreshold: 1
