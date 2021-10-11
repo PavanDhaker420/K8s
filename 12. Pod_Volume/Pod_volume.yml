@@ -2,23 +2,21 @@
 apiVersion: v1
 kind: Pod
 metadata:
- name: httpd-pod
+ name: httpd-pod-with-emptydir-volume
  labels:
   app: httpd
   team: devops
 spec:
  containers:
-  - name: httpd-container
-    image: httpd:latest
-    ports:
-     - containerPort: 80
-       protocol: TCP
+  - name: alpine-container
+    image: alpine
+    args:
+     - /bin/sh
+     - -c
+     - sleep 1d
     volumeMounts:
-     - mountPath: /logs
-       name: httpd-mount
+     - mountPath: /var/log
+       name: httpd-logs-mount
  volumes: 
-  - name: httpd-mount
+  - name: httpd-logs-mount
     emptyDir: {}
-    hostPath:
-     path: /var/log
-     type: Directory
