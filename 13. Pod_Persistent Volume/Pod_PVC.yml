@@ -1,0 +1,13 @@
+--- 
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+ name: httpd-pvc
+spec:
+ accessModes:
+  - ReadWriteOnce
+ resources:
+  requests:
+   memory: "12Mi"
+ volumeMode: Filesystem
+ volumeName: httpd-pv
