@@ -11,4 +11,4 @@ spec:
  volumeMode: Filesystem
  persistentVolumeReclaimPolicy: Retain
  capacity:
-  storage: 1GiB
+  storage: 1Gi
