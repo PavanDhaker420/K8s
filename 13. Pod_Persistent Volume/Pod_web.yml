@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
- name: httpd-pod
+ name: httpd-pod-with-persistent-volume
  labels:
   app: httpd
   team: devops
@@ -13,6 +13,10 @@ spec:
     ports:
      - containerPort: 80
        protocol: TCP
+    volumeMounts:
+     - mountPath: /var/log
+       name: pv-storage
  volumes:
   - persistentVolumeClaim:
      claimName: httpd-pvc
+    name: pv-storage

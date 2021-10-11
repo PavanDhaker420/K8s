@@ -8,6 +8,6 @@ spec:
   - ReadWriteOnce
  resources:
   requests:
-   memory: "12Mi"
+   storage: 1GiB
  volumeMode: Filesystem
  volumeName: httpd-pv
