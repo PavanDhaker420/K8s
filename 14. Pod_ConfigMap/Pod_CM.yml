@@ -1,0 +1,10 @@
+--- 
+apiVersion: v1
+kind: ConfigMap
+metadata:
+ name: app-cmap
+data:
+ name: config-map
+ app: alpine
+ env: dev
+ team: devops
