@@ -15,5 +15,5 @@ spec:
      - -c
      - sleep 1d
     envFrom:
-     configMapRef:
-      name: app-cmap
+     - configMapRef:
+        name: app-cmap
