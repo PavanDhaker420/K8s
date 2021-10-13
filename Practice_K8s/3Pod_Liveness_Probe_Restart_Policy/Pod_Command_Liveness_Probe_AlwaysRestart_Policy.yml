@@ -1,0 +1,25 @@
+---
+apiVersion: v1
+kind: Pod
+metadata: 
+ name: pod-cmd-livenessprobe-with-always-restart
+ labels:
+  os: alpine
+  env: learning
+spec:
+ restartPolicy: Always
+ containers: 
+  - name: alpine-cmd-livenessprobe-no-restart-demo
+    image: alpine
+    command:
+        - /bin/sh
+        - -c
+        - touch /tmp/ready; sleep 10; rm /tmp/ready; sleep 20;
+    livenessProbe:
+     initialDelaySeconds: 5
+     periodSeconds: 5
+     successThreshold: 1
+     exec:
+      command:
+       - cat
+       - /tmp/ready;

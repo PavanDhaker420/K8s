@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Pod
+metadata: 
+ name: pod-with-resource-limits
+spec:
+ containers: 
+  - name: httpd-container-with-resource-limits
+    image: httpd
+    ports:
+     - containerPort: 80
+       protocol: TCP
+    resources:
+     requests: # Define Minimum Requirement to run application
+      memory: "16Mi"
+      cpu: "50m"
+     limits: # Define Maximum Requirement to run application
+      memory: "64Mi"
+      cpu: "100m"

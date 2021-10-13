@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Service
+metadata: 
+ name: pod-httpd-svc
+spec:
+ type: NodePort
+ ports: 
+  - name: httpd-svc
+    nodePort: 32555
+    port: 80
+    targetPort: 80
+    protocol: TCP

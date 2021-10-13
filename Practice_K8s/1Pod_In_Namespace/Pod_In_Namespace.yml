@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Pod
+metadata: 
+ name: httpd-container-in-ns
+ namespace: ns-demo
+spec:
+ containers: 
+  - name: httpd-container
+    image: httpd
+    ports:
+     - containerPort: 80
+       protocol: TCP
+# To create Namespace with kubectl:
+## Use below commands:
+#### kubectl create namespace <namespace-name>

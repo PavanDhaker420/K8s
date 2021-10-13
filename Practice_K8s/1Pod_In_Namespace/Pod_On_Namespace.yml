@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Pod
+metadata: 
+ name: httpd-container-in-ns
+ namespace: demo-ns
+spec:
+ containers: 
+  - name: httpd-container
+    image: httpd
+    ports:
+     - containerPort: 80
+       protocol: TCP
+# First Create Namespace by running below yaml file:
+## namespace.yml
