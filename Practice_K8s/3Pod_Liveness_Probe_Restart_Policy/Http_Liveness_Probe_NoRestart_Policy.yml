@@ -1,0 +1,21 @@
+---
+apiVersion: v1
+kind: Pod
+metadata: 
+ name: http-liveness-probe-no-restart-pod
+ labels:
+  app: httpd
+  env: learning
+spec: 
+ restartPolicy: Never
+ containers:
+  - name: http-liveness-probe-no-restart-container
+    image: httpd
+    livenessProbe: 
+     httpGet: 
+      path: /
+      port: 80
+     initialDelaySeconds: 2
+     periodSeconds: 10
+     successThreshold: 1
+     failureThreshold: 1

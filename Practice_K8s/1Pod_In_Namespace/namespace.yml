@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Namespace
 metadata: 
- name: httpd-namespace
+ name: demo-ns
  labels:
   app: httpd
   env: learning
