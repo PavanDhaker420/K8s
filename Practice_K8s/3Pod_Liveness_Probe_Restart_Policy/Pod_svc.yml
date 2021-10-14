@@ -8,7 +8,7 @@ spec:
  selector: 
   app: httpd
  ports: 
-  protocol: TCP
-  port: 8080 #Port of the service which will used by service to connect container
-  targetPort: 80
-  nodePort: 32555
+  - protocol: TCP
+    port: 8080 #Port of the service which will used by service to connect container
+    targetPort: 80
+    nodePort: 32555
