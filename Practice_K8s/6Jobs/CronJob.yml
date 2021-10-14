@@ -1,0 +1,30 @@
+---
+apiVersion: v1
+kind: CronJob
+metadata:
+ name: learning-cronjob
+ labels:
+  app: alpine
+  env: learning
+spec:
+ schedule:
+  * * * * *
+ jobTemplate:
+  metadata:
+   name: learning-cronjob-template
+  spec:
+   selector:
+    matchLabels:
+     app: alpine
+   template:
+    metadata:
+     name: learning-cronjob-pod
+    spec:
+     containers:
+      - name: learning-cronjob-container
+        image: alpine
+        args:
+         - /bin/sh
+         - -c
+         - touch /tmp/ready; sleep 10s; rm /tmp/ready; sleep 10s;
+     restartPolicy: OnFailure

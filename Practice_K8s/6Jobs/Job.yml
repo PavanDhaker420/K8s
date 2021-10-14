@@ -1,0 +1,24 @@
+---
+apiVersion: v1
+kind: Job
+metadata:
+ name: learning-job
+ labels:
+  app: alpine
+  env: learning
+spec:
+ selector:
+  matchLabels:
+   app: alpine
+ template:
+  metadata:
+   name: learning-pod
+  spec:
+   containers:
+    - name: learning-container
+      image: alpine
+      args:
+       - /bin/sh
+       - -c
+       - touch /tmp/ready; sleep 10s; rm /tmp/ready; sleep 10s;
+   restartPolicy: OnFailure
