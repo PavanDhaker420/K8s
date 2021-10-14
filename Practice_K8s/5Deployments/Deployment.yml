@@ -16,8 +16,10 @@ spec:
    maxUnavailable: 25%
  template:
   metadata:
-   app: jenkins
-   env: learning
+   name: jenkins-pod
+   labels:
+    app: jenkins
+    env: learning
   spec:
    containers:
     - name: jenkins-pod
