@@ -5,7 +5,6 @@ metadata:
  name: learning-job
  labels:
   app: alpine
-  env: learning
 spec:
  selector:
   matchLabels:
@@ -13,6 +12,9 @@ spec:
  template:
   metadata:
    name: learning-pod
+   labels:
+    app: alpine
+    env: learning
   spec:
    containers:
     - name: learning-container

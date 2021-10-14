@@ -5,7 +5,6 @@ metadata:
  name: learning-cronjob
  labels:
   app: alpine
-  env: learning
 spec:
  schedule:
   * * * * *
@@ -19,6 +18,9 @@ spec:
    template:
     metadata:
      name: learning-cronjob-pod
+     labels:
+      app: alpine
+      env: learning
     spec:
      containers:
       - name: learning-cronjob-container
