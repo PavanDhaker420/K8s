@@ -6,9 +6,6 @@ metadata:
  labels:
   app: alpine
 spec:
- selector:
-  matchLabels:
-   app: alpine
  template:
   metadata:
    name: learning-pod

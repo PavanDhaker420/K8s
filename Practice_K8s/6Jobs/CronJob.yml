@@ -6,15 +6,11 @@ metadata:
  labels:
   app: alpine
 spec:
- schedule:
-  * * * * *
+ schedule: "*/1 * * * *"
  jobTemplate:
   metadata:
    name: learning-cronjob-template
   spec:
-   selector:
-    matchLabels:
-     app: alpine
    template:
     metadata:
      name: learning-cronjob-pod
