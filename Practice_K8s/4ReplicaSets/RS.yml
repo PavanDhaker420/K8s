@@ -17,11 +17,11 @@ spec:
     env: learning
   spec: 
    containers:
-    name: nginx-container
-    image: nginx
-    ports: 
-     - containerPort: 8080
-       protocol: TCP
+    - name: nginx-container
+      image: nginx
+      ports: 
+       - containerPort: 8080
+         protocol: TCP
        
 ---
 apiVersion: v1

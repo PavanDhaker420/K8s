@@ -20,19 +20,19 @@ spec:
    env: learning
   spec:
    containers:
-    name: jenkins-pod
-    image: jenkins:2.60.3
-    ports:
-     - containerPort: 80
-       protocol: TCP
-    livenessProbe:
-     httpGet:
-      path: /
-      port: 80
-     initialDelaySeconds: 5
-     periodSeconds: 10
-     successThreshold: 1
-     failureThreshold: 1
+    - name: jenkins-pod
+      image: jenkins:2.60.3
+      ports:
+       - containerPort: 80
+         protocol: TCP
+      livenessProbe:
+       httpGet:
+        path: /
+        port: 80
+       initialDelaySeconds: 5
+       periodSeconds: 10
+       successThreshold: 1
+       failureThreshold: 1
 
 
 
