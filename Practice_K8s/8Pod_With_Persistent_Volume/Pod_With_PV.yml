@@ -15,6 +15,6 @@ spec:
      - mountPath: /tmp/logs
        name: logs-volume
  volumes:
-  name: logs-volume
-  persistentVolumeClaim:
-   claimName: learning-pvc
+  - name: logs-volume
+    persistentVolumeClaim:
+     claimName: learning-pvc
