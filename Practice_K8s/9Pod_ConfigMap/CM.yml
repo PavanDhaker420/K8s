@@ -7,4 +7,4 @@ data:
  app: alpine
  env: learning
  team: devops
- release: first
+ version: "1.0" # Should be define as string  values otherwise it will throw error
