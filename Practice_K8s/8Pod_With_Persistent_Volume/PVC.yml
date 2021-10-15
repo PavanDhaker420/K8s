@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata: 
+ name: learning-pvc
+spec:
+ accessModes:
+  - ReadWriteOnce
+ selector:
+  matchLabels:
+   vol: pv
+ volumeMode: Filesystem
+ volumeName: learning-pv

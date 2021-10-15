@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata: 
+ name: learning-pv
+ labels:
+  app: alpine
+  vol: pv
+spec:
+ accessModes:
+  ReadWriteOnce
+ hostPath:
+  path: /tmp/logs
+ persistentVolumeReclaimPolicy: Retain
+ volumeMode: Filesystem
+ capacity:
+  storage: 1Gi

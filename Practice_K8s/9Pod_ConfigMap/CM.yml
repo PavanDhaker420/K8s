@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+ name: learning-cmap
+spec:
+ data:
+  app: alpine
+  env: learning
+  team: devops
+  version: 1.0
