@@ -15,6 +15,6 @@ spec:
      - name: cmap-volume
        mountPath: /tmp/cmap
  volumes:
-  name: cmap-volume
-  configMap:
-   name: learning-cmap
+  - name: cmap-volume
+    configMap:
+     name: learning-cmap
