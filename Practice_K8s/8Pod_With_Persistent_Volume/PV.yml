@@ -8,7 +8,7 @@ metadata:
   vol: pv
 spec:
  accessModes:
-  ReadWriteOnce
+  - ReadWriteOnce
  hostPath:
   path: /tmp/logs
  persistentVolumeReclaimPolicy: Retain
